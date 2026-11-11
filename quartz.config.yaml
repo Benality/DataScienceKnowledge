@@ -199,10 +199,19 @@ plugins:
       priority: 5
       condition: not-index
   - source: "@quartz-community/comments"
-    enabled: false
+    enabled: true
     options:
       provider: giscus
-      options: {}
+      options:
+        repo: Benality/DataScienceKnowledge
+        repoId: R_kgDOVqtp7w
+        category: General
+        categoryId: DIC_kwDOVqtp784DK5HJ
+        mapping: pathname
+        strict: false
+        reactionsEnabled: true
+        inputPosition: bottom
+        lang: en
     layout:
       position: afterBody
       priority: 10
