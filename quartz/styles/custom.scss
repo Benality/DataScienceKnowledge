@@ -1,0 +1,60 @@
+@use "./variables.scss" as *;
+
+.page[data-frame="header-nav"] > #quartz-body {
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "site-header site-header site-header"
+    "grid-sidebar-left grid-header grid-sidebar-right"
+    "grid-sidebar-left grid-center grid-sidebar-right"
+    "grid-sidebar-left grid-footer grid-sidebar-right";
+
+  @media all and ($tablet) {
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "site-header site-header"
+      "grid-sidebar-left grid-header"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-sidebar-right"
+      "grid-sidebar-left grid-footer";
+  }
+
+  @media all and ($mobile) {
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      "site-header"
+      "grid-sidebar-left"
+      "grid-header"
+      "grid-center"
+      "grid-sidebar-right"
+      "grid-footer";
+  }
+
+  & .site-header {
+    grid-area: site-header;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--lightgray);
+    background: var(--light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    @media all and ($mobile) {
+      padding: 0.85rem 1rem;
+    }
+
+    & > header {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  & .sidebar.left {
+    @media all and not ($mobile) {
+      padding-top: 1.5rem;
+    }
+  }
+
+  & .page-header {
+    margin-top: 1.5rem;
+  }
+}
